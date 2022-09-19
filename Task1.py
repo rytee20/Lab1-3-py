@@ -21,8 +21,10 @@ else: #иначе
             if count==len(virys): #если счетчик равен длине вируса
                 index.append(i) #запоминаем индекс первого символа вируса внутри строки
                 #print(i) опять проверка
-    for i in range(0,len(index)): #пробегамся по строке уже изначальной с первого символа до последнего
-        for j in range(0,len(virys)):
-            startstring = startstring[:index[i+len(index)-1]] + startstring[index[i+len(index)-1] + 1:] #удаляем символы вируса по одному по очереди, начиная с первого символа поледнего вируса
-
+    for i in range(len(startstring)-1,-1,-1): #пробегамся по строке уже изначальной от последнего до первого
+        for j in range(len(index)-1,-1,-1):
+            if index[j]==i:
+                for k in range(0,len(virys)):
+                  startstring=startstring[:i] +startstring[i+1:] #удаляем символы вируса по одному по очереди, начиная с первого символа поледнего вируса               
+                
 print("Результат: ", startstring)
