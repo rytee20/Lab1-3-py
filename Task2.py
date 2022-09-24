@@ -21,14 +21,25 @@ def minusoneifzero(listofnumbers):
 
 print("Задание2!")
 
-amountofnumbers=int(input("Введите колтчество чисел: "))
+while True:
+    try:
+        amountofnumbers=int(input("Введите колтчество чисел: "))
+        break
+    except ValueError:
+        print("Вы ввели не число. Попробуйте снова: ")
+
 numbers=[]
 amountofzeros=0
 countofoperations=0
 countofoperations1=0
 
 for i in range(0,amountofnumbers):
-    numbers.append(int(input("Введите число: ")))
+    while True:
+        try:
+            numbers.append(int(input("Введите число: ")))
+            break
+        except ValueError:
+            print("Вы ввели не число. Попробуйте снова: ")
 
 for i in range(0,len(numbers)):
     print(numbers[i])
