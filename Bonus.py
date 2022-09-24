@@ -1,6 +1,10 @@
 print("Бонус!")
-
-countofmagic=int(input("Введите номер магического числа: "))
+while True:
+    try:
+        countofmagic=int(input("Введите номер магического числа: "))
+        break
+    except ValueError:
+        print("Вы ввели не число. Попробуйте снова: ")
 count=0
 
 for i in range (1,10000):
