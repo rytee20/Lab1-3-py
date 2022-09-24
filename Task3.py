@@ -3,13 +3,24 @@ print("Задание3!")
 InputData=[]
 OutputData=[]
 ListOfCosts=[]
+inputlist=[]
 
 amountofoutputdata=0
-amountofinputdata=int(input("Введите количество строк формата {ряд} {место} {стоимость билета}: "))
+while True:
+    try:
+        amountofinputdata=int(input("Введите количество строк формата {ряд} {место} {стоимость билета}: "))
+        break
+    except ValueError:
+        print("Вы ввели не число. Попробуйте снова: ")
 
 print("Вводите билеты в формате {ряд} {место} {стоимость билета}: ")
 for i in range(0,amountofinputdata):
-    InputData.append(input().split(' '))
+    while True:
+        try:
+            InputData.append(list(map(int, input().split())))
+            break
+        except ValueError:
+            print("Вы ввели не число. Попробуйте снова: ")
 
 for i in range(0,len(InputData)):
     if(len(OutputData)==0):
